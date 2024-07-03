@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class JsonplaceholderService {
 
+  private  apiUrl:string = 'https://jsonplaceholder.typicode.com/comments';
+
   constructor() { }
 }
