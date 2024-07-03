@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { JsonplaceholderService } from '../../service/jsonplaceholder.service';
+import { Comments } from '../../service/models/coments';
 
 @Component({
   selector: 'app-pregunta2',
@@ -8,5 +10,25 @@ import { Component } from '@angular/core';
   styleUrl: './pregunta2.component.css'
 })
 export class Pregunta2Component {
+
+  garfields:Comments[]=[];
+  constructor(private serviceholder:JsonplaceholderService){}
+
+  ngOnInit(): void {
+    this.listartodoslosdominiosgarfields();
+  }
+
+  listartodoslosdominiosgarfields(){
+    this.serviceholder.getflitracomentporgarfield().subscribe(
+      data=>{
+        this.garfields=data;
+        console.log("datos -->" ,data)
+      }
+    )
+  }
+
+
+
+
 
 }

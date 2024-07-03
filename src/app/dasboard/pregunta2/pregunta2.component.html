@@ -1,1 +1,15 @@
-<p>pregunta2 works!</p>
+
+<table>
+  <thead></thead>
+  <tbody>
+    @for (item of garfields; track $index) {
+      <tr>
+        <td>{{ item.postId }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.body }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
