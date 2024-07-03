@@ -1,1 +1,16 @@
-<p>pregunta1 works!</p>
+
+
+
+  <h1>Rick and Morty Characters - Species: Human</h1>
+  <ul>
+    @for (item of humanos; track $index) {
+      <li>{{item.id}}</li>
+      <li>{{item.name}}</li>
+    }
+
+
+  </ul>
+
+<div *ngIf="humanos.length === 0">
+  <p>No human characters found.</p>
+</div>
