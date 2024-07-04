@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Comments } from './models/coments';
 
 @Injectable({
@@ -12,9 +12,10 @@ export class JsonplaceholderService {
 
   constructor(private http:HttpClient) { }
 
-  getflitracomentporgarfield():Observable<Comments[]>{
-    return this.http.get<Comments[]>(this.apiUrl)
-
+  getFiltraComentPorGarfield(): Observable<Comments[]> {
+    return this.http.get<Comments[]>(this.apiUrl).pipe(
+      map((comments: Comments[]) => comments.filter((comment: Comments) => comment.email.endsWith('@garfield.biz')))
+    );
   }
 
 

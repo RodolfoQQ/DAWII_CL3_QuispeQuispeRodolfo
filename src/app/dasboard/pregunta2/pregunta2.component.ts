@@ -19,7 +19,7 @@ export class Pregunta2Component {
   }
 
   listartodoslosdominiosgarfields(){
-    this.serviceholder.getflitracomentporgarfield().subscribe(
+    this.serviceholder.getFiltraComentPorGarfield().subscribe(
       data=>{
         this.garfields=data;
         console.log("datos -->" ,data)

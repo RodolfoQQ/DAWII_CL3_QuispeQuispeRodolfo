@@ -10,11 +10,11 @@ export class RickandmortyService {
 
   private  apiUrl:string = 'https://rickandmortyapi.com/api/character';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   humanosporespecie(): Observable<Character[]> {
-    return this.http.get<{ results: Character[] }>(this.apiUrl).pipe(
-      map(response => response.results.filter(character => character.species === 'Human'))
+    return this.http.get<{results:Character[]}>(this.apiUrl).pipe(
+      map(response=>response.results.filter(character=>character.species==='Human'))
     );
   }
 }
